@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#170f12" />
+    <title>Köroğlu | Benden Selam Olsun Bolu Beyi'ne</title>
+    <link rel="preload" href="./siir14.mp3" as="audio" type="audio/mpeg" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="is-locked">
+    <div class="backdrop" aria-hidden="true">
+      <div class="glow glow-a"></div>
+      <div class="glow glow-b"></div>
+      <div class="glow glow-c"></div>
+      <div class="grain"></div>
+    </div>
+
+    <button class="start-screen" id="startScreen" type="button">
+      <span class="start-screen__frame"></span>
+      <span class="start-screen__eyebrow">Bilim Şenliği Sunumu</span>
+      <strong class="start-screen__title">Benden Selam<br />Olsun Bolu<br />Beyi'ne</strong>
+      <span class="start-screen__meta">Köroğlu • 00:46</span>
+      <span class="start-screen__hint">Şiiri başlatmak için ekrana dokun</span>
+      <span class="start-screen__note">
+        Mobil tarayıcılar sesli otomatik başlatmayı engellediği için ilk dokunuş gerekiyor.
+      </span>
+    </button>
+
+    <audio id="poemAudio" src="./siir14.mp3" preload="auto" loop playsinline></audio>
+
+    <main class="app">
+      <section class="hero">
+        <div class="hero__topline">
+          <span class="pill">Köroğlu</span>
+          <span class="pill">Destan Şiiri</span>
+          <span class="pill">00:46</span>
+        </div>
+
+        <div class="hero__copy">
+          <p class="eyebrow">Sert ve meydan okuyan bir şiir akışı</p>
+          <h1>Benden Selam Olsun<br />Bolu Beyi'ne</h1>
+          <p class="intro">
+            Şiir tek dokunuşla başlar, döngüde devam eder ve temizlenmiş sözler kısa ama güçlü bir
+            akış halinde parlayarak öne çıkar.
+          </p>
+        </div>
+
+        <section class="player-card" aria-label="Şiir oynatıcısı">
+          <div class="player-card__halo"></div>
+          <div class="player-card__header">
+            <span class="player-card__label">Canlı akış</span>
+            <span class="player-card__status" id="playState">Başlatılmadı</span>
+          </div>
+
+          <div class="player-card__core">
+            <div class="orb">
+              <svg class="progress-ring" viewBox="0 0 180 180" aria-hidden="true">
+                <circle class="progress-ring__track" cx="90" cy="90" r="74"></circle>
+                <circle class="progress-ring__value" cx="90" cy="90" r="74"></circle>
+              </svg>
+              <div class="orb__center">
+                <span class="orb__label">Süre</span>
+                <strong id="currentTime">00:00</strong>
+                <span id="totalTime">00:46</span>
+              </div>
+            </div>
+
+            <div class="equalizer" id="equalizer" aria-hidden="true"></div>
+          </div>
+
+          <div class="controls">
+            <button class="control-button" id="soundToggle" type="button">Sesi Kapat</button>
+            <button class="control-button control-button--ghost" id="restartButton" type="button">
+              Baştan Sar
+            </button>
+          </div>
+        </section>
+      </section>
+
+      <section class="lyrics">
+        <div class="section-title">
+          <p class="eyebrow">Şiirin sözleri</p>
+          <h2>Zaman damgaları çıkarıldı, sözler 5 akış kartına bölündü</h2>
+        </div>
+
+        <div class="verses" id="verses">
+          <article class="verse-card is-active" data-start="0" data-end="8" style="--delay: 0s;">
+            <span class="verse-card__index">I</span>
+            <p>Herkese benden selam olsun Bolu Beyi'ne</p>
+          </article>
+
+          <article class="verse-card" data-start="8" data-end="15" style="--delay: 0.6s;">
+            <span class="verse-card__index">II</span>
+            <p>Çıkıp şu dağlara yaslanmalıdır</p>
+            <p>At kişnemesinden kalkan sesinde</p>
+            <p>Dağlar seda verip seslenmelidir</p>
+          </article>
+
+          <article class="verse-card" data-start="15" data-end="22" style="--delay: 1.2s;">
+            <span class="verse-card__index">III</span>
+            <p>Düşman geldi tabur tabur dizildi</p>
+            <p>Alnımıza kara yazı yazıldı</p>
+            <p>Tüfek icat oldu mertlik bozuldu</p>
+            <p>Eğri kılıç kında paslanmalıdır</p>
+          </article>
+
+          <article class="verse-card" data-start="22" data-end="39" style="--delay: 1.8s;">
+            <span class="verse-card__index">IV</span>
+            <p>Köroğlu düşer mi merdin şanından</p>
+            <p>Ayırır çoğunu er meydanından</p>
+            <p>Kırat köpüğünden düşman kanından</p>
+            <p>Çevrem dolup şalvarsın almalıdır</p>
+          </article>
+
+          <article class="verse-card" data-start="39" data-end="46.32" style="--delay: 2.4s;">
+            <span class="verse-card__index">V</span>
+            <p>Benden selam olsun Bolu Beyi'ne</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
